@@ -224,10 +224,6 @@ test('mock admin + franchises', async({ page}) => {
     }
   });
 
-  await page.evaluate((user) => {
-    localStorage.setItem('user', JSON.stringify(user)); 
-  }, adminUser);
-
   await page.goto('/admin-dashboard');
 
   await page.goto('/admin-dashboard/create-franchise');
