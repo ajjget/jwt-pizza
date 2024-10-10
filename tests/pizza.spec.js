@@ -204,10 +204,12 @@ test('mock admin + franchises', async({ page}) => {
     }
   });
 
+  let adminUser;
+
   await page.route('*/**/api/auth', async (route) => {
     if (route.request().method() === 'POST') {
       const regReq = { name: 'adminUser', email: 'admin@jwt.com', password: 'toomanysecrets' };
-      const regRes = {
+      adminUser = {
         user: {
           id: 1,
           name: 'adminUser',
@@ -218,9 +220,13 @@ test('mock admin + franchises', async({ page}) => {
       };
 
       expect(route.request().postDataJSON()).toMatchObject(regReq);
-      await route.fulfill({ json: regRes });
+      await route.fulfill({ json: adminUser });
     }
   });
+
+  await page.evaluate((user) => {
+    localStorage.setItem('user', JSON.stringify(user)); 
+  }, adminUser);
 
   await page.goto('/admin-dashboard');
 
