@@ -59,8 +59,8 @@ jobs:
     permissions:
       id-token: write
     environment:
-      name: production
-      url: https://pizza.ajjget.click
+      name: staging
+      url: https://stage-pizza.andreagettys.click
     runs-on: ubuntu-latest
     env:
       version: ${{needs.build.outputs.version}}
