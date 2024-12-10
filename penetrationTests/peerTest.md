@@ -28,9 +28,6 @@
 | Description | Users could access logs and find administrator/user auth keys and JWTs |
 | Correction | Sanitized token and JWTs in logs |
 
-2. Password HTTP Request Vulernability
-3. Log Sanitization
-
 ## Andrea Gettys attack on Keiffer da Silva
 
 
