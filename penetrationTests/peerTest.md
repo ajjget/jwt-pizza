@@ -78,3 +78,7 @@
 | Successful? | Yes |
 
 ## What I Learned
+
+During my internship this past summer, security concerns were mentioned, but I really had no grasp on how people could exploit websites. During this deliverable, I learned what SQL injection really is and why parameters prevent it. When parameters are used, it treats all entries as an entire string, so that the worst that would happen is a strange SQL Injection string being entered into the database. Additionally, I learned how to view and modify requests that I am sending to the server. This taught me not to put any data that I can't get from the database in my request. Why would I put pizza price in my request if I can very easily just pull that from my database? Finally, this deliverable taught me to make sure I never have any private information anywhere public, because there are people always trying to find it and exploit it. The past few deliverables also taught me this, as I can see bots crawling on my website to find any data they can.
+
+Overall, this deliverable was very beneficial and opened my eyes to security concerns I had never considered.
